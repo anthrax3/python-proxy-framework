@@ -1,6 +1,6 @@
 python-proxy-framework
 ======================
-python-proxy-framework is a *proof-of-concept* implementation of a framework for building flexible and powerful network-proxy configurations in the context of security audits or penetration tests. Users are able to write individual proxy-configurations as XML descriptions by inserting modules which can either be self-implemented or imported out from a included repository. Valid proxy-configurations can be executed by using a provided console script.
+*Proof-of-concept* implementation of a framework for building flexible and powerful network-proxy configurations in the context of security audits or penetration tests. Users are able to write individual proxy-configurations as XML descriptions by inserting modules which can either be self-implemented or imported from a included repository. Valid proxy-configurations can be executed by using a provided console script.
 
 ## Requirements
 
@@ -24,4 +24,4 @@ I would be happy for every contribution regarding this particular implementation
 1. Push the branch up to GitHub and send a pull request for your branch
 
 ## License
-python-proxy-framework is free software and released under the terms of the GNU General Public License v2 (http://www.gnu.org/licenses/gpl-3.0.html), as specified in LICENSE.txt
+python-proxy-framework is free software and released under the terms of the GNU General Public License v2 (http://www.gnu.org/licenses/gpl-3.0.html), as specified in LICENSE.
