@@ -1,0 +1,22 @@
+<repository>
+  <module type="simple">
+    <name>ProxyClient</name>
+    <author>Frederik Hauser</author>
+    <repo>adapter/http/ProxyClient</repo>
+    <desc>Provides a HTTP-Client for forwarding requests and receiving the responses</desc>
+  </module>
+
+  <module type="simple">
+    <name>ProxyReceiver</name>
+    <author>Frederik Hauser</author>
+    <desc>Provides a listening HTTP-Proxy</desc>
+    <repo>adapter/http/ProxyReceiver</repo>
+  </module>
+
+  <module type="simple">
+    <name>UserAgentChanger</name>
+    <author>Frederik Hauser</author>
+    <desc>Change user-agent in given HTTP-Requests</desc>
+    <repo>modifier/http/UserAgentChanger</repo>
+  </module>
+</repository>

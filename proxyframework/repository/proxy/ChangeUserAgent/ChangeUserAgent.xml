@@ -1,0 +1,24 @@
+<module type="proxy">
+ <name>Demo-Medianight</name>
+
+ <module type="simple" repo="adapter/http/ProxyReceiver" id="pr">
+  <config>
+    <param id="port" value="8080"/>
+    <param id="host" value="000.000.000.000" />
+  </config>
+ </module>
+
+ <module type="simple" repo="modifier/http/UserAgentChanger" id="uac">
+  <config>
+    <param id="user-agent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3" />
+  </config>
+ </module>
+
+
+ <module type="simple" repo="adapter/http/ProxyClient" id="pc"/>
+   
+ <channel source="pr.out1" sink="uac.in1" />
+ <channel source="uac.out1" sink="pc.in1" />
+ <channel source="pc.out1" sink="pr.in1" />
+
+</module>

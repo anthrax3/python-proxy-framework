@@ -1,0 +1,21 @@
+<module type="simple">
+  <name>UserAgentChanger</name>
+  <author>Frederik Hauser</author>
+  <src>UserAgentChanger.py</src>
+  <desc>Change user-agent in given HTTP-Requests</desc>
+
+  <!-- requirements to run the module -->
+  <requirements>
+    <requirement name="binascii" version="python2.7" />
+  </requirements>
+
+  <!-- define ports, standard mappings and descriptions -->
+  <ports>
+    <input id="in1" function="module_input" desc="HTTP-Request input" type="http"/>
+    <output id="out1" desc="HTTP-Requests with changed user-agent" type="http"/>
+  </ports>
+
+  <config>
+    <param id="user-agent" description="user-agent to change to" />
+  </config>
+</module>

@@ -18,7 +18,22 @@ Install the python-proxy-framework by useing python-setuputils as:
 
 # Documentation
 ## Execute a proxy-configuration
+An existing and valid proxy-configuration (available as XML-file) can be executed by useing a provided console-script:
+
+    $ pf-starter --config SampleProxyConfiguration.xml
+
 ## Interact with the repository
+All interactions with the repository can be performed with the corresponding console-script:
+
+* Printout a list of all present modules within the repository
+  $ pf-repo --list$
+
+* Search for a module by giving a search-string
+  $ pf-repo --search "UserAgent"
+
+* Show detailled information about a specific module
+  $ pf-repo --display "UserAgentChanger"
+
 
 # Information
 
@@ -36,4 +51,4 @@ I would be happy for every contribution regarding this particular implementation
 1. Push the branch up to GitHub and send a pull request for your branch
 
 ## License
-python-proxy-framework is free software and released under the terms of the GNU General Public License v2 (http://www.gnu.org/licenses/gpl-3.0.html), as specified in LICENSE.
+python-proxy-framework is free software and released under the terms of the GNU General Public License v3 (http://www.gnu.org/licenses/gpl-3.0.html), as specified in LICENSE.

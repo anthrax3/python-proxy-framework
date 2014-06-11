@@ -1,0 +1,19 @@
+<module type="simple">
+  <name>ProxyClient</name>
+  <author>Frederik Hauser</author>
+  <src>ProxyClient.py</src>
+  <desc>Provides a HTTP-Client for forwarding requests and receiving the responses</desc>
+
+  <!-- requirements to run the module -->
+  <requirements>
+    <requirement name="socket" version="python2.7" />
+    <requirement name="asyncore" version="python2.7" />
+  </requirements>
+
+  <!-- define ports, standard mappings and descriptions -->
+  <ports>
+    <input id="in1" function="http_request_input" type="http" />
+    <output id="out1" desc="Output for received responses" type="http" />
+  </ports>
+
+</module>

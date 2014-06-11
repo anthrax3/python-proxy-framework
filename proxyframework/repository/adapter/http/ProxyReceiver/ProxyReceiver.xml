@@ -1,0 +1,24 @@
+<module type="simple">
+  <name>ProxyReceiver</name>
+  <author>Frederik Hauser</author>
+  <src>ProxyReceiver.py</src>
+  <desc>Provides a listening HTTP-Proxy</desc>
+
+  <!-- requirements to run the module -->
+  <requirements>
+    <requirement name="socket" version="python2.7" />
+    <requirement name="asyncore" version="python2.7" />
+  </requirements>
+
+  <!-- define ports, standard mappings and descriptions -->
+  <ports>
+    <output id="out1" desc="Output for gathered HTTP-Requests" type="http"/>
+    <input id="in1" function="response_in" desc="Response-output to the client" type="http" />
+  </ports>
+
+  <!-- define possible configuration parameters -->
+  <config>
+    <param id="port" desc="port to listen on" />
+    <param id="host" desc="specific address on the current host" />
+  </config>
+</module>
