@@ -2,6 +2,9 @@ python-proxy-framework
 ======================
 *Proof-of-concept* implementation of a framework for building flexible and powerful network-proxy configurations in the context of security audits or penetration tests. Users are able to write individual proxy-configurations as XML descriptions by inserting modules which can either be self-implemented or imported from a included repository. Valid proxy-configurations can be executed by using a provided console script.
 
+Additional ressources:
+[Slides: Bachelor Thesis Defense](http://www.fhauser.de/pub/140224_Slides_Thesis.pdf)
+
 ## Requirements
 
 * python 2.6 / 2.7
@@ -12,6 +15,13 @@ python-proxy-framework
 Install the python-proxy-framework by useing python-setuputils as:
     
     $ python2 setup.py install
+
+# Getting Started
+
+# Information
+
+## Improvements
+As mentioned in the introduction, the current implementation should be considered as project in a *Proof-of-concept* state. Improvements as well as error-corrections will take place within the future. The *Issue* functionality for this repository can be used to report errors / problems or improvement proposals. 
 
 ## Contributing
 
