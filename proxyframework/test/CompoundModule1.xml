@@ -1,0 +1,37 @@
+<module type="compound">
+	<name>CompoundModule1</name>
+	<author>Frederik Hauser</author>
+	<desc>This is some sample description.</desc>
+	
+	<ports>
+		<input id="in1" type="t1"/>
+		<output id="out1" type="t1"/>
+	</ports>
+	
+	<config>
+		<param id="foo"/>
+		<param id="bar" value="foobar"/>
+	</config>
+	
+	<mapping>
+		<portmap port="in1" to="sm2.in1" dir="input"/>
+		<portmap port="cm2.out1" to="out1" dir="output"/>
+		<confmap id="foo" to="sm2.foo"/>
+		<confmap id="bar" to="cm2.bar"/>
+	</mapping>
+		
+	<module type="simple" src="SimpleModule2.xml" id="sm2">
+		<config>
+			<param id="bar" value="foo"/>
+		</config>
+	</module>
+	
+	<module type="compound" src="CompoundModule2.xml" id="cm2">
+		<config>
+			<param id="foo" value="bar"/>
+		</config>
+	</module>
+	
+	<channel source="sm2.out1" sink="cm2.in1"/>
+
+</module>

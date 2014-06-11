@@ -1,0 +1,17 @@
+<module type = "simple">
+	<name>SimpleModule3</name>
+	<author>Frederik Hauser</author>
+	<desc>This is some sample description.</desc>
+	<src>SimpleModule3.py</src>
+	
+	<ports>
+		<input id="in1" function="input_handler_1" type="t1"/>
+		<output id="out1" type="t1" />
+	</ports>
+	
+	<config>
+		<param id="foo"/>
+		<param id="bar" value="foobar"/>
+	</config>
+
+</module>

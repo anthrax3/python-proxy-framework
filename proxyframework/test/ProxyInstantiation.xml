@@ -1,0 +1,23 @@
+<module type = "proxy">
+	<name>ProxyConfiguration</name>
+	<author>Frederik Hauser</author>
+	<desc>This is some sample description.</desc>
+	
+	<!-- SimpleModule 1 -->
+	<module type="simple" src="SimpleModule1.xml" id="sm1">
+		<config>
+			<param id="foo" value="bar"/>
+		</config>
+	</module>
+
+	<!-- CompoundModule1 -->
+	<module type="compound" src="CompoundModule1.xml" id="cm1">
+		<config>
+			<param id="foo" value="bar"/>
+			<param id="bar" value="barfoo"/>
+		</config>
+	</module>
+	
+	<channel source="sm1.out1" sink="cm1.in1"/>
+
+</module>
