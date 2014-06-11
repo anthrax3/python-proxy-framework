@@ -26,13 +26,16 @@ An existing and valid proxy-configuration (available as XML-file) can be execute
 All interactions with the repository can be performed with the corresponding console-script:
 
 * Printout a list of all present modules within the repository
-  $ pf-repo --list$
+
+        $ pf-repo --list$
 
 * Search for a module by giving a search-string
-  $ pf-repo --search "UserAgent"
+
+        $ pf-repo --search "UserAgent"
 
 * Show detailled information about a specific module
-  $ pf-repo --display "UserAgentChanger"
+
+        $ pf-repo --display "UserAgentChanger"
 
 
 # Information
