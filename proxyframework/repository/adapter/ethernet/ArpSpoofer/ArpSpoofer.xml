@@ -1,0 +1,15 @@
+<module type = "simple">
+  <name>ArpSpoofer</name>
+  <author>Frederik Hauser</author>
+  <desc>Performs an ARP-Spoofing attack on a target host</desc>
+  <src>ArpSpoofer.py</src>
+
+  <config>
+    <param id="interface" desc="Interface for sending out the generated ARP-Responses"/>
+    <param id="host" desc="Host (IP-Address) which should be impersonated"/>
+    <param id="target-ip" desc="IP-Address of the attack's target"/>
+    <param id="target-mac" desc="MAC-Address of the attack's target"/>
+    <param id="mode" value="continuous" desc="continuous: periodically every five minutes, single: one single ARP-Response"/>
+  </config>
+
+</module>

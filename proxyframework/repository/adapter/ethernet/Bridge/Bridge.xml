@@ -1,0 +1,17 @@
+<module type = "simple">
+	<name>Bridge</name>
+	<author>Frederik Hauser</author>
+	<desc>Gathering-Module for inserting Packets from a Bridge-Scenario</desc>
+	<src>Bridge.py</src>
+	
+	<ports>
+		<output id="out1" type="t1"/>
+	</ports>
+	
+    <config>
+      <param id="interface-in" desc="source interface" />
+      <param id="interface-out" desc="sink interface for forwarding packets from non-relevant protocols"/>
+    </config>
+    <!-- Multiple Queues can be defined useing Config-Parameters. For further description read the instruction manual -->
+
+</module>
