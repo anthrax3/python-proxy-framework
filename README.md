@@ -10,7 +10,7 @@ Additional ressources:
 * python 2.6 / 2.7
 * lxml
 
-Warning: Single modules within the repository can have additional requirements.
+Warning: Simple Modules within the repository can have additional requirements.
 
 ## Install
 
@@ -39,11 +39,6 @@ As an example, the SimpleModule "UserAgentChanger" (which basically is ported fr
   <author>Frederik Hauser</author>
   <src>UserAgentChanger.py</src>
   <desc>Change user-agent in given HTTP-Requests</desc>
-
-  <!-- requirements to run the module -->
-  <requirements>
-    <requirement name="binascii" version="python2.7" />
-  </requirements>
 
   <!-- define ports, standard mappings and descriptions -->
   <ports>
