@@ -10,6 +10,8 @@ Additional ressources:
 * python 2.6 / 2.7
 * lxml
 
+Warning: Single modules within the repository can have additional requirements.
+
 ## Install
 
 Install the python-proxy-framework by useing python-setuputils as:
@@ -17,6 +19,74 @@ Install the python-proxy-framework by useing python-setuputils as:
     $ python2 setup.py install
 
 # Documentation
+
+## Structure
+To achieve a maximum way of flexibility in imlementing and useing functions, two types of modules provide powerful elements for creating individual proxy-configurations.
+
+### Simple Module
+Simple Modules encapsulate atomic parts of functionality, where the actual behaviour is implemented in Python or executed within a Python wrapper. Therefore, a Simple Module is always represented by two files: 
+
+* module description (structure, meta-information) written in XML
+* implementation (of functionality) sourcecode written in Python
+
+As an example, the SimpleModule "UserAgentChanger" (which basically is ported from the existing http(s)-proxy named "proxpy") will be described along the corresponding sourcecode-files:
+
+####  Module Description
+
+```xml
+<module type="simple">
+  <name>UserAgentChanger</name>
+  <author>Frederik Hauser</author>
+  <src>UserAgentChanger.py</src>
+  <desc>Change user-agent in given HTTP-Requests</desc>
+
+  <!-- requirements to run the module -->
+  <requirements>
+    <requirement name="binascii" version="python2.7" />
+  </requirements>
+
+  <!-- define ports, standard mappings and descriptions -->
+  <ports>
+    <input id="in1" function="module_input" desc="HTTP-Request input" type="http"/>
+    <output id="out1" desc="HTTP-Requests with changed user-agent" type="http"/>
+  </ports>
+
+  <config>
+    <param id="user-agent" description="user-agent to change to" />
+  </config>
+</module>
+```
+
+#### Implementation of Functionality
+
+```python
+import proxyframework.datatypes.http as http
+from proxyframework.core import SimpleModule
+
+class UserAgentChanger(SimpleModule):
+    """ Change user-agent in a given HTTP-request
+    """
+
+    def __init__(self, configuration_parameters):
+        super(UserAgentChanger, self).__init__(configuration_parameters)
+        self.config = configuration_parameters
+        
+    def module_input(self, request, **kwargs):
+        try:
+            if request.getHeader("User-Agent") != None:
+                request.setHeader("User-Agent", self.config["user-agent"])
+
+        except AttributeError:
+            pass
+            
+        self.send("output_out1", request, **kwargs)
+```
+
+### Compound Module
+Compound Modules encapsulate different simple modules, providing a construct to perform a particular task.
+
+### Proxy Configuration
+
 ## Execute a proxy-configuration
 An existing and valid proxy-configuration (available as XML-file) can be executed by useing a provided console-script:
 
@@ -27,7 +97,7 @@ All interactions with the repository can be performed with the corresponding con
 
 * Printout a list of all present modules within the repository
 
-        $ pf-repo --list$
+        $ pf-repo --list
 
 * Search for a module by giving a search-string
 
