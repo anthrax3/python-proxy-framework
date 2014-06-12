@@ -20,6 +20,8 @@ Install the python-proxy-framework by useing python-setuputils as:
 
 # Documentation
 
+Please use this [slides](http://www.fhauser.de/pub/140224_Slides_Thesis.pdf) for more detailed information about the overall structure of the proxy-framework. A detailled documentation will be released within the next days.
+
 ## Structure
 To achieve a maximum way of flexibility in imlementing and useing functions, two types of modules provide powerful elements for creating individual proxy-configurations.
 
@@ -40,7 +42,6 @@ As an example, the SimpleModule "UserAgentChanger" (which basically is ported fr
   <src>UserAgentChanger.py</src>
   <desc>Change user-agent in given HTTP-Requests</desc>
 
-  <!-- define ports, standard mappings and descriptions -->
   <ports>
     <input id="in1" function="module_input" desc="HTTP-Request input" type="http"/>
     <output id="out1" desc="HTTP-Requests with changed user-agent" type="http"/>
