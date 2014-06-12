@@ -1,0 +1,17 @@
+<module type="simple">
+  <name>TcpSocketClient</name>
+  <author>Frederik Hauser</author>
+  <src>TcpSocketClient.py</src>
+  <desc>Provides a TcpSocketClient.</desc>
+
+  <ports>
+    <input id="in1" function="tcp_payload_input" type="tcp_payload"/>
+    <output id="out1" desc="Output for gathered packets" type="tcp_payload" />
+  </ports>
+
+  <!-- define possible configuration parameters -->
+  <config>
+    <param id="port" desc="port to listen on" />
+    <param id="host" desc="specific address on the current host" />
+  </config>
+</module>
